@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Gallery of Horns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+  </head>
+
+  <script id="horns-template" type="text/x-handlebars-template">
+    <div class={{keyword}}>
+      <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        <img src={{image_url}}>
+    </div>
+    </div>
+  </script>
+  
+  <body>
+    <header>
+      <h1>The Gallery of Horns</h1>
+      <select id="keyword-dropdown" name="keyword">
+        <option value="0">Filter by Keyword</option>
+        <option value='1'>narwhal</option>
+        <option value='2'>rhino</option>
+        <option value='3'>unicorn</option>
+        <option value='4'>unilego</option>
+        <option value='5'>triceratops</option>
+        <option value='6'>markhor</option>
+        <option value='7'>mouflon</option>
+        <option value='8'>addax</option>
+        <option value='9'>chameleon</option>
+        <option value='10'>lizard</option>
+        <option value='11'>dragon</option>
+      </select>
+      <input type='button' value='Selected Option' id='but_read'>
+
+      <br/>
+      <div id='result'></div>
+      <input type='button' value='Switch Page' id='page_button'>
+      </br>  
+      <select id="filter-dropdown" name="horns">
+        <option value="0">Filter by Keyword</option>
+        <option value="1">horns</option>
+      </select>
+      <input type='button' value='Start Filter' id='but_filter'>
+
+      <br/>
+    </header>
+    <main>
+      <section id="photo-template">
+        <h2></h2>
+        <p></p>
+      </section>
+    </main>
+    <footer>
+      &COPY; 2019 Travis & Daesy
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
+
+
+
