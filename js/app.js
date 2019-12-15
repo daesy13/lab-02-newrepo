@@ -30,7 +30,6 @@ Creatures.prototype.renderingWithHandlebars = function(){
   $('#photo-template').append(html);
 }
 
-// $.get('../data/page-1.json').then(
 $.get('data/page-1.json').then(
   (data) => {
     data.forEach(creatureObjFromFile => {
