@@ -59,7 +59,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('#page_button').click(function() {
     $('div').hide();
-    $.get('../data/page-2.json').then(
+    $.get('data/page-2.json').then(
       (data) => {
         data.forEach(creatureObjFromFile => {
           let creature = new Creatures( creatureObjFromFile.image_url,creatureObjFromFile.title, creatureObjFromFile.description, creatureObjFromFile.keyword, creatureObjFromFile.horns);
