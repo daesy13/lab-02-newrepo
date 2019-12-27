@@ -1,28 +1,23 @@
 'use strict'
 
+let creatureImages = [];
+
 function Creatures(image_url, title, description, keyword, horns){
   this.image_url=image_url;
   this.title=title;
   this.description=description;
   this.keyword=keyword;
   this.horns=horns;
-}
 
-// Creatures.prototype.renderingWithJQuery = function(){
-//   $('#photo-template').append(`
-//     <div class="${this.keyword}">
-//       <h2>${this.title}</h2>
-//       <img src="${this.image_url}"></img>
-//       <p>${this.description}</p>
-//     </div>`
-//   )
-// }
+  creatureImages.push(this);
+}
 
 Creatures.prototype.renderingWithJQuery = function(){
   let hornsTemplate = $('#horns-template').html();
   let hbHornsTemplate = Handlebars.compile(hornsTemplate);
   let html = hbHornsTemplate(this);
   $('#photo-template').append(html);
+
 }
 
 // RENDERING BY PAGE
@@ -53,7 +48,6 @@ $(document).ready(function(){
 
 // SWITCH PAGES
 let actualPage = 'data/page-1.json';
-
 $(document).ready(function(){
   $('#page_button').click(function(){
     $('div').hide();
@@ -76,42 +70,26 @@ $(document).ready(function(){
   });
 });
 
-// DROPDOWN SELECTION
-// $(document).ready(function(){
-//   // $("#keyword-dropdown").select2();
-//   $('#but_read').click(function() {
-//     let $animal = $('#keyword-dropdown option:selected').text();
 
-//     $('#result').html('animal: ' + $animal)
-//     // $('div').each(function(value){
+// HORN FILTER
+$('#but_filter').on('click', function(){
+  let $horns = $('#filter-dropdown option:selected').text();
+  $('div[class]').hide();  
+  if ($horns === 'horns') {
+    
+    console.log('creatureImages:', creatureImages)
+    let sorted = creatureImages.sort(function(a,b) {
+      if(a.horns > b.horns){
+        return 1
+      };
+      if(b.horns > a.horns){
+        return -1
+      };
+      return 0;
+    });
 
-//     // })
-//     $('div').hide();
-//     // $('div class=this.keyword').show();
-//     $(`div[class="${$animal}"]`).show();
-//     console.log(`div[class="${$animal}"]`);
-//     if ($(this).keyword !== animal)
-//       console.log('animal:', animal)
-//       $(this).hide();
-
-//     if ($(this).keyword === animal)
-//       $(this).show();
-//   });
-// });
-
-// // SWITCH PAGE ON PAGE 2
-// // $(document).ready(function(){
-// //   $('#page_button').click(function() {
-// //     $('div').hide();
-// //     $.get('data/page-1.json').then(
-// //       (data) => {
-// //         data.forEach(creatureObjFromFile => {
-// //           let creature = new Creatures( creatureObjFromFile.image_url,creatureObjFromFile.title, creatureObjFromFile.description, creatureObjFromFile.keyword, creatureObjFromFile.horns);
-// //           creature.renderingWithJQuery();
-// //         })
-// //       }
-// //     )
-// //   });
-// // });
-
-
+    $('div[class]').remove();
+    sorted.forEach(horns => horns.renderingWithJQuery());
+    $(`div[class="${$animal}"]`).show();
+  };
+});
