@@ -1,0 +1,20 @@
+{
+  "name": "lab-02-newrepo",
+  "version": "1.0.0",
+  "description": "cc from lab-02-repository to be grade it  Lab Partner: TRAVIS COOTS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daesy13/lab-02-newrepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daesy13/lab-02-newrepo/issues"
+  },
+  "homepage": "https://github.com/daesy13/lab-02-newrepo#readme"
+}
