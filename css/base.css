@@ -1,23 +1,12 @@
-
-
 body {
   margin: 0 auto;
-  /* display: flex; */
-  /* align-items: ; */
 }
-
-/* main{
-  display: inline-flex; */
-  /* flex-direction: column;
-  align-items: flex-start;
-} */
 
 img {
   width: 300px;
   height: 300px;
   border: 2px solid purple;
   border-radius: 25px;
-  /* float: left; */
 }
 
 h1{
@@ -27,9 +16,6 @@ h1{
 #photo-template {
   text-align: center;
   word-wrap: break-word;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 30px; */
 }
 
 h2{
@@ -45,6 +31,5 @@ div {
   display: inline-block;
   width: 315px;
   align-items: center;
-  
   height: 100%;
 }
