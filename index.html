@@ -8,11 +8,12 @@
   </head>
 
   <script id="horns-template" type="text/x-handlebars-template">
-    <div class={{keyword}}>
-      <h2>{{title}}</h2>
-        <p>{{description}}</p>
-        <img src={{image_url}}>
-    </div>
+    <div data-page="{{page}}">
+      <div class={{keyword}} >
+        <h2>{{title}}</h2>
+          <p class="{{horns}}">{{description}}</p>
+          <img src={{image_url}}>
+      </div>
     </div>
   </script>
   
